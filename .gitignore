@@ -1,0 +1,23 @@
+# Modèles (trop volumineux pour git, voir README pour régénération/téléchargement)
+models/
+
+# Environnement virtuel (si jamais présent dans ce dossier)
+rov-venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Logs et données de diagnostic
+*.csv
+*.log
+
+# Vidéos de test
+*.mp4
+
+# Résidus macOS
+__MACOSX/
+._*
+
+# Fichiers temporaires
+tmp/

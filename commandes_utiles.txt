@@ -1,0 +1,33 @@
+# video stream 
+gst-launch-1.0 videotestsrc ! videoconvert ! qtic2venc ! h264parse ! mpegtsmux ! udpsink host=192.168.5.85 port=5000
+
+#trouver un fichier 
+
+find / -name 'libQnnTFLiteDelegate.so' 2>/dev/null
+
+yolo export model=yolov8n.pt format=tflite imgsz=640 int8=True data=coco128.yaml
+# activer venv
+source bin/activate
+# Mettre en place l'environnement
+source /opt/qcom/qirp-sdk/qirp-setup.sh
+
+export QNN_LIB=/opt/qcom/qirp-sdk/lib/aarch64-oe-linux-gcc11.2
+export LD_LIBRARY_PATH=$QNN_LIB:$LD_LIBRARY_PATH
+export ADSP_LIBRARY_PATH=$QNN_LIB
+# IP mac
+
+ifconfig | grep "inet " | grep -v 127.0.0.1
+ # Voir les caméras disponibles sur le ROV
+ls -la /dev/video*
+
+# Infos sur chaque caméra
+v4l2-ctl --list-devices
+v4l2-ctl -d /dev/video0 --list-formats-ext
+
+# En cas de perte de connection ssh
+
+# Voir tous les process python qui tournent
+ps aux | grep python
+
+# Tuer tous les scripts python d'un coup
+pkill -f python3
