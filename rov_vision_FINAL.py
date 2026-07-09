@@ -126,7 +126,7 @@ TEST_VIDEO = False
 FRAME_W       = 1280  # output / display resolution
 FRAME_H       = 720
 FPS_OUT       = 15   # GStreamer stream framerate (can exceed camera capture rate)
-CONF_THRES    = 0.05  # detections below this confidence score are discarded
+CONF_THRES    = 0.20  # detections below this confidence score are discarded
 
 MIN_CY_VALID  = 60      # NOUVEAU : rejette les détections trop hautes dans l'image (fantômes de surface)
 
@@ -138,8 +138,8 @@ ALPHA_XY =  0.15     # reactivity x,y
 ALPHA_Z  = 0.05   # reactivity z
 ALPHA_CXY_MIDAS = 0.25   # reactivity centroids
 #Activate for color map (debugging, uses CPU ressoucrces)
-DEBUG_DEPTH = False
-DEBUG_EXCLUSION_ZONE = True 
+DEBUG_DEPTH = True
+DEBUG_EXCLUSION_ZONE = False
 
 INFER_FPS = 15 # limite le rythme d'inférence, indépendamment de la vitesse caméra
 MIN_LOOP_DT = 1.0 / INFER_FPS
@@ -491,7 +491,8 @@ while True:
     # ---------- Depth visualisation ----------
     # Blend the MAGMA-coloured depth map over the camera feed so engineers can
     # visually verify depth quality. Disabled by default — costs ~5 ms of CPU.
-    if DEBUG_DEPTH :
+    if DEBUG_DEPTH and depth_map is not None :
+
         depth_norm    = cv2.normalize(depth_map, None, 0, 255, cv2.NORM_MINMAX)
         depth_color   = cv2.applyColorMap(depth_norm.astype(np.uint8), cv2.COLORMAP_MAGMA)
         depth_display = cv2.resize(depth_color, (FRAME_W, FRAME_H))
