@@ -1,0 +1,307 @@
+[
+  {
+    "model": "yolov8n_full_integer_quant.tflite",
+    "backend": "htp",
+    "htp_performance_mode": "0",
+    "profiling": null,
+    "delegate_options": {
+      "backend_type": "htp",
+      "htp_performance_mode": "0"
+    },
+    "input_shape": [
+      1,
+      640,
+      640,
+      3
+    ],
+    "input_dtype": "<class 'numpy.int8'>",
+    "load_alloc_ms": 609.5,
+    "n": 300,
+    "wall_s": 1.75,
+    "ceiling_inf_per_s": 171.06,
+    "invoke_ms": {
+      "p50": 5.5,
+      "p90": 5.832,
+      "p95": 5.923,
+      "p99": 6.156,
+      "mean": 5.529,
+      "min": 5.164,
+      "max": 6.386,
+      "std": 0.208
+    },
+    "set_tensor_ms_mean": 0.179,
+    "get_tensor_ms_mean": 0.128,
+    "first10_vs_last10_ms": [
+      5.32,
+      5.55
+    ],
+    "npu_temp_start_C": 60.5,
+    "npu_temp_end_C": 60.5,
+    "qnn_prepare": {
+      "stages_us": {
+        "Graph Preparation Initializing": 184,
+        "Graph Optimizations": 176373,
+        "Post Graph Optimization": 8196,
+        "Graph Sequencing for Target": 31585,
+        "VTCM Allocation": 15445,
+        "Parallelization Optimization": 4352,
+        "Finalizing Graph Sequence": 4522,
+        "Completion": 221
+      },
+      "ddr": {
+        "spill_bytes": 0,
+        "fill_bytes": 0,
+        "write_total_bytes": 706560,
+        "read_total_bytes": 4835328
+      },
+      "prepare_total_ms": 240.9
+    },
+    "qnn_execute": null,
+    "qnn_execute_log_head": null,
+    "thermal_trace": null
+  },
+  {
+    "model": "yolov8n_full_integer_quant.tflite",
+    "backend": "htp",
+    "htp_performance_mode": "1",
+    "profiling": null,
+    "delegate_options": {
+      "backend_type": "htp",
+      "htp_performance_mode": "1"
+    },
+    "input_shape": [
+      1,
+      640,
+      640,
+      3
+    ],
+    "input_dtype": "<class 'numpy.int8'>",
+    "load_alloc_ms": 531.6,
+    "n": 300,
+    "wall_s": 0.52,
+    "ceiling_inf_per_s": 582.25,
+    "invoke_ms": {
+      "p50": 1.65,
+      "p90": 1.669,
+      "p95": 1.68,
+      "p99": 1.761,
+      "mean": 1.657,
+      "min": 1.639,
+      "max": 2.036,
+      "std": 0.03
+    },
+    "set_tensor_ms_mean": 0.038,
+    "get_tensor_ms_mean": 0.021,
+    "first10_vs_last10_ms": [
+      1.75,
+      1.65
+    ],
+    "npu_temp_start_C": 64.9,
+    "npu_temp_end_C": 69.6,
+    "qnn_prepare": {
+      "stages_us": {
+        "Graph Preparation Initializing": 234,
+        "Graph Optimizations": 171893,
+        "Post Graph Optimization": 7375,
+        "Graph Sequencing for Target": 30508,
+        "VTCM Allocation": 13362,
+        "Parallelization Optimization": 4650,
+        "Finalizing Graph Sequence": 4561,
+        "Completion": 222
+      },
+      "ddr": {
+        "spill_bytes": 0,
+        "fill_bytes": 0,
+        "write_total_bytes": 706560,
+        "read_total_bytes": 4835328
+      },
+      "prepare_total_ms": 232.8
+    },
+    "qnn_execute": null,
+    "qnn_execute_log_head": null,
+    "thermal_trace": null
+  },
+  {
+    "model": "yolov8n_full_integer_quant.tflite",
+    "backend": "htp",
+    "htp_performance_mode": "2",
+    "profiling": null,
+    "delegate_options": {
+      "backend_type": "htp",
+      "htp_performance_mode": "2"
+    },
+    "input_shape": [
+      1,
+      640,
+      640,
+      3
+    ],
+    "input_dtype": "<class 'numpy.int8'>",
+    "load_alloc_ms": 552.2,
+    "n": 300,
+    "wall_s": 0.5,
+    "ceiling_inf_per_s": 601.46,
+    "invoke_ms": {
+      "p50": 1.576,
+      "p90": 1.602,
+      "p95": 1.625,
+      "p99": 1.948,
+      "mean": 1.592,
+      "min": 1.561,
+      "max": 2.201,
+      "std": 0.072
+    },
+    "set_tensor_ms_mean": 0.044,
+    "get_tensor_ms_mean": 0.024,
+    "first10_vs_last10_ms": [
+      1.95,
+      1.58
+    ],
+    "npu_temp_start_C": 67.7,
+    "npu_temp_end_C": 72.4,
+    "qnn_prepare": {
+      "stages_us": {
+        "Graph Preparation Initializing": 228,
+        "Graph Optimizations": 170178,
+        "Post Graph Optimization": 7460,
+        "Graph Sequencing for Target": 32392,
+        "VTCM Allocation": 13502,
+        "Parallelization Optimization": 4349,
+        "Finalizing Graph Sequence": 4427,
+        "Completion": 219
+      },
+      "ddr": {
+        "spill_bytes": 0,
+        "fill_bytes": 0,
+        "write_total_bytes": 706560,
+        "read_total_bytes": 4835328
+      },
+      "prepare_total_ms": 232.8
+    },
+    "qnn_execute": null,
+    "qnn_execute_log_head": null,
+    "thermal_trace": null
+  },
+  {
+    "model": "yolov8n_full_integer_quant.tflite",
+    "backend": "htp",
+    "htp_performance_mode": "3",
+    "profiling": null,
+    "delegate_options": {
+      "backend_type": "htp",
+      "htp_performance_mode": "3"
+    },
+    "input_shape": [
+      1,
+      640,
+      640,
+      3
+    ],
+    "input_dtype": "<class 'numpy.int8'>",
+    "load_alloc_ms": 546.8,
+    "n": 300,
+    "wall_s": 0.53,
+    "ceiling_inf_per_s": 571.23,
+    "invoke_ms": {
+      "p50": 1.653,
+      "p90": 1.69,
+      "p95": 1.731,
+      "p99": 2.301,
+      "mean": 1.677,
+      "min": 1.641,
+      "max": 2.748,
+      "std": 0.115
+    },
+    "set_tensor_ms_mean": 0.044,
+    "get_tensor_ms_mean": 0.026,
+    "first10_vs_last10_ms": [
+      2.24,
+      1.66
+    ],
+    "npu_temp_start_C": 67.3,
+    "npu_temp_end_C": 70.8,
+    "qnn_prepare": {
+      "stages_us": {
+        "Graph Preparation Initializing": 229,
+        "Graph Optimizations": 171731,
+        "Post Graph Optimization": 7418,
+        "Graph Sequencing for Target": 31633,
+        "VTCM Allocation": 13934,
+        "Parallelization Optimization": 4480,
+        "Finalizing Graph Sequence": 4502,
+        "Completion": 212
+      },
+      "ddr": {
+        "spill_bytes": 0,
+        "fill_bytes": 0,
+        "write_total_bytes": 706560,
+        "read_total_bytes": 4835328
+      },
+      "prepare_total_ms": 234.1
+    },
+    "qnn_execute": null,
+    "qnn_execute_log_head": null,
+    "thermal_trace": null
+  },
+  {
+    "model": "yolov8n_full_integer_quant.tflite",
+    "backend": "htp",
+    "htp_performance_mode": "4",
+    "profiling": null,
+    "delegate_options": {
+      "backend_type": "htp",
+      "htp_performance_mode": "4"
+    },
+    "input_shape": [
+      1,
+      640,
+      640,
+      3
+    ],
+    "input_dtype": "<class 'numpy.int8'>",
+    "load_alloc_ms": 555.0,
+    "n": 300,
+    "wall_s": 1.13,
+    "ceiling_inf_per_s": 265.92,
+    "invoke_ms": {
+      "p50": 3.43,
+      "p90": 3.578,
+      "p95": 3.665,
+      "p99": 3.945,
+      "mean": 3.456,
+      "min": 3.104,
+      "max": 4.655,
+      "std": 0.152
+    },
+    "set_tensor_ms_mean": 0.183,
+    "get_tensor_ms_mean": 0.112,
+    "first10_vs_last10_ms": [
+      3.44,
+      3.66
+    ],
+    "npu_temp_start_C": 63.7,
+    "npu_temp_end_C": 63.3,
+    "qnn_prepare": {
+      "stages_us": {
+        "Graph Preparation Initializing": 208,
+        "Graph Optimizations": 170721,
+        "Post Graph Optimization": 8433,
+        "Graph Sequencing for Target": 34000,
+        "VTCM Allocation": 14334,
+        "Parallelization Optimization": 5128,
+        "Finalizing Graph Sequence": 4965,
+        "Completion": 239
+      },
+      "ddr": {
+        "spill_bytes": 0,
+        "fill_bytes": 0,
+        "write_total_bytes": 706560,
+        "read_total_bytes": 4835328
+      },
+      "prepare_total_ms": 238.0
+    },
+    "qnn_execute": null,
+    "qnn_execute_log_head": null,
+    "thermal_trace": null
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "model": "depth_anything_v3.tflite",
+    "backend": "htp",
+    "htp_performance_mode": "1",
+    "profiling": "2",
+    "delegate_options": {
+      "backend_type": "htp",
+      "htp_performance_mode": "1",
+      "profiling": "2"
+    },
+    "input_shape": [
+      1,
+      518,
+      518,
+      3
+    ],
+    "input_dtype": "<class 'numpy.float32'>",
+    "load_alloc_ms": 9729.1,
+    "n": 200,
+    "wall_s": 26.9,
+    "ceiling_inf_per_s": 7.44,
+    "invoke_ms": {
+      "p50": 133.64,
+      "p90": 135.786,
+      "p95": 136.183,
+      "p99": 146.511,
+      "mean": 133.503,
+      "min": 124.0,
+      "max": 153.333,
+      "std": 3.295
+    },
+    "set_tensor_ms_mean": 0.386,
+    "get_tensor_ms_mean": 0.579,
+    "first10_vs_last10_ms": [
+      135.0,
+      132.51
+    ],
+    "npu_temp_start_C": 68.0,
+    "npu_temp_end_C": 68.0,
+    "qnn_prepare": {
+      "stages_us": {
+        "Graph Preparation Initializing": 273,
+        "Graph Optimizations": 2643299,
+        "Post Graph Optimization": 170634,
+        "Graph Sequencing for Target": 3611281,
+        "VTCM Allocation": 787039,
+        "Parallelization Optimization": 77279,
+        "Finalizing Graph Sequence": 149498,
+        "Completion": 3139
+      },
+      "ddr": {
+        "spill_bytes": 59598848,
+        "fill_bytes": 75794432,
+        "write_total_bytes": 104966144,
+        "read_total_bytes": 168767488
+      },
+      "prepare_total_ms": 7442.4
+    },
+    "qnn_execute": null,
+    "qnn_execute_log_head": null,
+    "thermal_trace": null
+  }
+]

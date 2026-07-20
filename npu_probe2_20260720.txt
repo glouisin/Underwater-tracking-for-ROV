@@ -1,0 +1,85 @@
+
+=== A. Identification exacte du SoC (pour la section Hardware de l'article) ===================================================
+QCS_KALAMAP
+Snapdragon
+603
+2.0
+HDK
+qcom,kalamap-iotqcom,kalamapqcom,iot
+00000000: 025b 02                                  .[.
+
+=== B. Cœurs CPU : combien sont réellement en ligne ? ===================================================
+nproc            : 6
+present          : 0-5
+online           : 0-5
+offline          : 
+6
+cpu0 online=1 maxfreq=2016000
+cpu1 online=1 maxfreq=2016000
+cpu2 online=1 maxfreq=2016000
+cpu3 online=1 maxfreq=2803200
+cpu4 online=1 maxfreq=2803200
+cpu5 online=1 maxfreq=3187200
+
+=== C. Gouverneurs disponibles (il FAUT figer en performance pour les benchmarks) ===================================================
+walt conservative powersave performance schedutil 
+--- pour figer, lors des runs de mesure :
+    for g in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do echo performance > $g; done
+
+=== D. FastRPC : le device ne s'appelle pas 'fastrpc' sur ce kernel Android ===================================================
+crw-rw----  1 system system    494,   0 Jun  5 15:40 adsprpc-smd
+crw-r-----  1 system system    494,   1 Jun  5 15:40 adsprpc-smd-secure
+crw-rw----  1 system audio     484,   0 Jun  5 15:40 aud_pasthru_adsp
+crw-------  1 root   root      501,   0 Jun  5 15:40 msm_adsp_sleepmon
+crw-------  1 root   root      479,   2 Jun  5 15:40 rdbg_adsp
+crw-------  1 root   root      479,   5 Jun  5 15:40 rdbg_cdsp
+crw-------  1 root   root      486,   1 Jun  5 15:40 remoteproc-adsp-md
+crw-------  1 root   root      486,   0 Jun  5 15:40 remoteproc-cdsp-md
+crw-------  1 root   root      491,   5 Jun  5 15:40 smd11
+crw-------  1 radio  radio     491,   3 Jun  5 15:40 smd7
+crw-rw-r--  1 radio  radio     491,   4 Jun  5 15:40 smd8
+crw-------  1 radio  radio     491,   2 Jun  5 15:40 smdcntl8
+
+=== E. debugfs monté ? (le premier probe ne pouvait pas conclure — pipe masquait l'erreur) ===================================================
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+/sys/kernel/debug/clk
+--- horloges NSP/CDSP ---
+
+=== F. Le rail 'battery' réagit-il à la charge ? (=> énergie par inférence) ===================================================
+status : Discharging
+idle   : -47242uA 4325846uV
+idle   : -46509uA 4327014uV
+-- charge CPU 6 threads pendant 8 s --
+load   : -47974uA 4290423uV
+load   : -47242uA 4291396uV
+après  : -46876uA 4325651uV
+>>> si le courant varie de plus de ~20 mA entre idle et load, le rail est exploitable.
+
+=== G. iio (autres ADC de mesure éventuels) ===================================================
+iio:device0: c42d000.qcom,spmi:qcom,pmk8550@0:vadc@9000
+in_current_pm8550b_ichg_fb_input
+in_current_pm8550b_ichg_fb_label
+in_current_pm8550b_iin_fb_input
+in_current_pm8550b_iin_fb_label
+in_current_smb139x_1_ichg_smb_input
+
+=== H. Options réellement acceptées par le delegate (liste complète triée) ===================================================
+ERROR: [Qnn Delegate] Invalid op package option: %s
+ERROR: [Qnn Delegate] Unsupported Profiling option: %d
+WARNING: [Qnn Delegate] Unknown GPU backend precision %d.Option will be ignored.
+
+=== I. Outils QNN : versions et aide (pour le pipeline tflite -> QNN) ===================================================
+qnn-net-run pid:58899
+QNN SDK v2.28.0.241029232508_102474
+DESCRIPTION:
+------------
+Example application demonstrating how to load and execute a neural network
+using QNN APIs.
+
+Command Line Options:
+  [ -h, --help ]        Displays this help message.
+  [ --version ]         Displays version information.
+  --config=<val>        Path to the json config file.
+  [ --output=<val> ]    Specify the json file used to save the performance test results.
+
+=== DONE ===
