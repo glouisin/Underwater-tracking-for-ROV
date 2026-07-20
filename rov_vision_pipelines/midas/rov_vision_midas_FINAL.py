@@ -126,7 +126,7 @@ TEST_VIDEO = False
 FRAME_W       = 1280  # output / display resolution
 FRAME_H       = 720
 FPS_OUT       = 15   # GStreamer stream framerate (can exceed camera capture rate)
-CONF_THRES    = 0.20  # detections below this confidence score are discarded
+CONF_THRES    = 0.15 # detections below this confidence score are discarded
 
 MIN_CY_VALID  = 60      # NOUVEAU : rejette les détections trop hautes dans l'image (fantômes de surface)
 
@@ -138,7 +138,7 @@ ALPHA_XY =  0.15     # reactivity x,y
 ALPHA_Z  = 0.05   # reactivity z
 ALPHA_CXY_MIDAS = 0.25   # reactivity centroids
 #Activate for color map (debugging, uses CPU ressoucrces)
-DEBUG_DEPTH = True
+DEBUG_DEPTH = False
 DEBUG_EXCLUSION_ZONE = False
 
 INFER_FPS = 15 # limite le rythme d'inférence, indépendamment de la vitesse caméra

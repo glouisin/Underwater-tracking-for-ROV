@@ -1,0 +1,273 @@
+root@rov-test:~/ai-rov/src# python calibration_vid.py
+usage: calibration_vid.py [-h] --out OUT [--device DEVICE] [--width WIDTH] [--height HEIGHT] [--fps FPS]
+                          [--duration DURATION]
+calibration_vid.py: error: the following arguments are required: --out
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test.mp4
+Enregistrement -> calib_test.mp4  (1280x720 @ 30fps)
+Touches : 'q' pour arreter, espace pour marquer un palier (log console)
+qt.qpa.xcb: could not connect to display 
+qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "/usr/local/lib/python3.10/dist-packages/cv2/qt/plugins" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: xcb.
+
+Aborted
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test.mp4
+Enregistrement -> calib_test.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.4s
+^CTraceback (most recent call last):
+  File "/root/ai-rov/src/calibration_vid.py", line 145, in <module>
+    main()
+  File "/root/ai-rov/src/calibration_vid.py", line 92, in main
+    ret, frame = cap.read()
+KeyboardInterrupt
+
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test.mp4
+Enregistrement -> calib_test.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.3s
+  ... frame 60  t=9.0s
+
+  [PALIER MARQUÉ] frame=85  t=12.2s
+  ... frame 120  t=16.8s
+  ... frame 180  t=24.6s
+
+  [PALIER MARQUÉ] frame=186  t=25.3s
+  ... frame 240  t=32.0s
+
+  [PALIER MARQUÉ] frame=262  t=35.0s
+  ... frame 300  t=39.8s
+
+  [PALIER MARQUÉ] frame=322  t=42.7s
+  ... frame 360  t=47.5s
+
+  [PALIER MARQUÉ] frame=387  t=51.0s
+  ... frame 420  t=55.1s
+
+  [PALIER MARQUÉ] frame=423  t=55.6s
+q
+
+Terminé. 454 frames écrites dans calib_test.mp4
+
+Paliers marqués manuellement (backup) :
+  frame 85  (t=12.2s)
+  frame 186  (t=25.3s)
+  frame 262  (t=35.0s)
+  frame 322  (t=42.7s)
+  frame 387  (t=51.0s)
+  frame 423  (t=55.6s)
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test1.mp4
+Enregistrement -> calib_test1.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.3s
+
+  [PALIER MARQUÉ] frame=6  t=2.0s
+  ... frame 60  t=9.2s
+
+  [PALIER MARQUÉ] frame=87  t=12.8s
+  ... frame 120  t=16.9s
+
+  [PALIER MARQUÉ] frame=167  t=22.8s
+  ... frame 180  t=24.6s
+  ... frame 240  t=32.4s
+
+  [PALIER MARQUÉ] frame=247  t=33.3s
+  ... frame 300  t=40.1s
+
+  [PALIER MARQUÉ] frame=341  t=45.4s
+  ... frame 360  t=48.0s
+
+  [PALIER MARQUÉ] frame=404  t=53.5s
+  ... frame 420  t=55.7s
+q
+
+Terminé. 431 frames écrites dans calib_test1.mp4
+
+Paliers marqués manuellement (backup) :
+  frame 6  (t=2.0s)
+  frame 87  (t=12.8s)
+  frame 167  (t=22.8s)
+  frame 247  (t=33.3s)
+  frame 341  (t=45.4s)
+  frame 404  (t=53.5s)
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test1.mp4
+Enregistrement -> calib_test1.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.3s
+
+  [PALIER MARQUÉ] frame=6  t=2.1s
+  ... frame 60  t=9.1s
+
+  [PALIER MARQUÉ] frame=100  t=14.3s
+  ... frame 120  t=16.6s
+
+  [PALIER MARQUÉ] frame=152  t=20.9s
+  ... frame 180  t=24.6s
+
+  [PALIER MARQUÉ] frame=238  t=32.1s
+  ... frame 240  t=32.4s
+
+  [PALIER MARQUÉ] frame=272  t=36.6s
+  ... frame 300  t=40.2s
+^CTraceback (most recent call last):
+  File "/root/ai-rov/src/calibration_vid.py", line 145, in <module>
+    main()
+  File "/root/ai-rov/src/calibration_vid.py", line 92, in main
+    ret, frame = cap.read()
+KeyboardInterrupt
+
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test2.mp4
+Enregistrement -> calib_test2.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.3s
+  ... frame 60  t=9.1s
+
+  [PALIER MARQUÉ] frame=67  t=9.9s
+  ... frame 120  t=16.7s
+^CTraceback (most recent call last):
+  File "/root/ai-rov/src/calibration_vid.py", line 145, in <module>
+    main()
+  File "/root/ai-rov/src/calibration_vid.py", line 92, in main
+    ret, frame = cap.read()
+KeyboardInterrupt
+
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test2.mp4
+Enregistrement -> calib_test2.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.3s
+  ... frame 60  t=8.8s
+
+  [PALIER MARQUÉ] frame=91  t=12.9s
+^CTraceback (most recent call last):
+  File "/root/ai-rov/src/calibration_vid.py", line 145, in <module>
+    main()
+  File "/root/ai-rov/src/calibration_vid.py", line 92, in main
+    ret, frame = cap.read()
+KeyboardInterrupt
+
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test2.mp4
+Enregistrement -> calib_test2.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.3s
+  ... frame 60  t=9.2s
+
+  [PALIER MARQUÉ] frame=72  t=10.7s
+  ... frame 120  t=16.9s
+^CTraceback (most recent call last):
+  File "/root/ai-rov/src/calibration_vid.py", line 145, in <module>
+    main()
+  File "/root/ai-rov/src/calibration_vid.py", line 92, in main
+    ret, frame = cap.read()
+KeyboardInterrupt
+
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test2.mp4
+Enregistrement -> calib_test2.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.3s
+  ... frame 60  t=9.0s
+
+  [PALIER MARQUÉ] frame=103  t=14.5s
+  ... frame 120  t=16.8s
+  ... frame 180  t=24.6s
+
+  [PALIER MARQUÉ] frame=189  t=25.6s
+  ... frame 240  t=32.1s
+
+  [PALIER MARQUÉ] frame=298  t=39.6s
+  ... frame 300  t=39.8s
+  ... frame 360  t=47.4s
+
+  [PALIER MARQUÉ] frame=376  t=49.4s
+  ... frame 420  t=55.1s
+
+  [PALIER MARQUÉ] frame=459  t=60.2s
+  ... frame 480  t=62.9s
+q
+
+Terminé. 507 frames écrites dans calib_test2.mp4
+
+Paliers marqués manuellement (backup) :
+  frame 103  (t=14.5s)
+  frame 189  (t=25.6s)
+  frame 298  (t=39.6s)
+  frame 376  (t=49.4s)
+  frame 459  (t=60.2s)
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test2.mp4
+Enregistrement -> calib_test2.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.4s
+^CTraceback (most recent call last):
+  File "/root/ai-rov/src/calibration_vid.py", line 145, in <module>
+    main()
+  File "/root/ai-rov/src/calibration_vid.py", line 92, in main
+    ret, frame = cap.read()
+KeyboardInterrupt
+
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test2.mp4
+Enregistrement -> calib_test2.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.4s
+
+  [PALIER MARQUÉ] frame=31  t=5.2s
+  ... frame 60  t=9.0s
+
+  [PALIER MARQUÉ] frame=111  t=15.4s
+  ... frame 120  t=16.5s
+  ... frame 180  t=24.5s
+
+  [PALIER MARQUÉ] frame=181  t=24.6s
+  ... frame 240  t=32.3s
+
+  [PALIER MARQUÉ] frame=258  t=34.6s
+  ... frame 300  t=39.9s
+
+  [PALIER MARQUÉ] frame=346  t=46.0s
+  ... frame 360  t=47.8s
+
+  [PALIER MARQUÉ] frame=415  t=54.8s
+  ... frame 420  t=55.4s
+q
+
+Terminé. 448 frames écrites dans calib_test2.mp4
+
+Paliers marqués manuellement (backup) :
+  frame 31  (t=5.2s)
+  frame 111  (t=15.4s)
+  frame 181  (t=24.6s)
+  frame 258  (t=34.6s)
+  frame 346  (t=46.0s)
+  frame 415  (t=54.8s)
+root@rov-test:~/ai-rov/src# python3 calibration_vid.py --out calib_test3.mp4
+Enregistrement -> calib_test3.mp4  (1280x720 @ 30fps)
+Mode headless (pas de fenêtre) : tape Entrée pour marquer un palier, 'q' + Entrée pour arrêter.
+  ... frame 0  t=1.3s
+
+  [PALIER MARQUÉ] frame=31  t=5.3s
+  ... frame 60  t=9.1s
+
+  [PALIER MARQUÉ] frame=111  t=15.6s
+  ... frame 120  t=16.8s
+  ... frame 180  t=24.5s
+
+  [PALIER MARQUÉ] frame=191  t=26.0s
+  ... frame 240  t=32.3s
+
+  [PALIER MARQUÉ] frame=263  t=35.1s
+  ... frame 300  t=39.8s
+
+  [PALIER MARQUÉ] frame=334  t=44.1s
+  ... frame 360  t=47.5s
+
+  [PALIER MARQUÉ] frame=397  t=52.2s
+q
+
+Terminé. 416 frames écrites dans calib_test3.mp4
+
+Paliers marqués manuellement (backup) :
+  frame 31  (t=5.3s)
+  frame 111  (t=15.6s)
+  frame 191  (t=26.0s)
+  frame 263  (t=35.1s)
+  frame 334  (t=44.1s)
+  frame 397  (t=52.2s)
